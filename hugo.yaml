@@ -1,0 +1,174 @@
+baseURL: "https://examplesite.com/"
+languageCode: zh-tw
+title: VincentCorgi
+paginate: 5
+theme: PaperMod
+defaultContentLanguage: zh-tw # 最顶部首先展示的语言页面
+defaultContentLanguageInSubdir: false
+
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: VincentCorgi
+  # description: "ExampleSite description"
+  keywords: [Blog, Portfolio, PaperMod, VincentCorgi]
+  author: VincentCorgi
+  placeholder: "Search..." 
+  # author: ["Me", "You"] # multiple authors
+  # images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false # 禁用主題切換鈕
+  ShowReadingTime: false # 顯示閱讀時間，like Medium
+  ShowShareButtons: false # 顯示分享按紐 Bar 在最底下
+  ShowPostNavLinks: true # 顯示上下頁 Nav 在最底下
+  ShowBreadCrumbs: true # 顯示麵包屑
+  ShowCodeCopyButtons: true # 開啟程式碼複製紐
+  ShowWordCount: false # 是否顯示字數統計
+  ShowRssButtonInSectionTermList: false
+  disableSpecial1stPost: false # 禁用首篇文章的特殊樣式
+  disableScrollToTop: false # 禁用滾動到頂部按鈕
+  comments: false # 是否啟用評論
+  HideMeta: false # 是否隱藏文章元數據
+  hideSummary: false # 是否隱藏摘要
+  ShowToc: true # 是否顯示目錄
+  TocOpen: true # 默認是否打開目錄
+  UseHugoToc: true # 是否使用 Hugo 生成的目錄。
+
+  assets:
+    disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
+    apple_touch_icon: "<link / abs url>"
+    safari_pinned_tab: "<link / abs url>"
+
+  label:
+    text: "VincentCorgi"
+    icon: images/d.jpg
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: VincentCorgi Life
+    subtitle: "This is subtitle"
+    imageUrl: "images/a.png"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: 🍜 拉麵
+        url: posts/ramen-couple
+      - name: 💭 快思慢想
+        url: posts/tfs
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to VincentCorgi Life
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/"
+    - name: stackoverflow
+      url: "https://stackoverflow.com"
+    - name: github
+      url: "https://github.com/"
+    - name: facebook
+      url: "https://github.com/"
+    - name: apple
+      url: "https://github.com/"
+    - name: instagram
+      url: "https://www.instagram.com/_hornypicketlife_/"
+    
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+  #   yandex:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    linkFullImages: true
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  # editPost: # 加了這個會跑出來建議修改的
+  #   URL: "https://github.com/<path_to_repo>/content"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
+
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    includeMatches: true
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content", "description"]
+menu:
+  main:
+    # - identifier: ramen-couple
+    #   name: 🍜 拉麵
+    #   url: posts/ramen-couple
+    #   weight: 10
+    # - identifier: tfs
+    #   name: 💭 快思慢想
+    #   url: posts/tfs
+    #   weight: 20
+    - identifier: posts
+      name: 📜 文章類別
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: 🔖 標籤
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: 🔍 搜索
+      url: /search/
+      weight: 30
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    # lineNos: true
+    # style: monokai
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 1
+
+outputFormats.SearchIndex:
+  baseName: "index"
+  mediaType: "application/json"
+  isPlainText: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
